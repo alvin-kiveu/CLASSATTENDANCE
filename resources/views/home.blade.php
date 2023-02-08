@@ -42,15 +42,15 @@
 
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">Register Students</span>
                             <span class="info-box-number">
                                 <?php
                                 //COUNT NUM OF MENUS
-                                $menus = DB::table('menu')->count();
-                                echo $menus;
+                                $registerstudents = DB::table('registerstudents')->count();
+                                echo $registerstudents;
                                 ?>
                             </span>
                         </div>
@@ -61,14 +61,14 @@
 
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-building"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Class</span>
                             <span class="info-box-number">
                                 <?php
                                 //COUNT NUM OF SUB MENUS
-                                $submenus = DB::table('submenu')->count();
-                                echo $submenus;
+                                $classes = DB::table('classes')->count();
+                                echo $classes;
                                 ?>
                             </span>
                         </div>
@@ -87,8 +87,8 @@
                             <span class="info-box-number">
                                 <?php
                                 //COUNT NUM OF PAGES
-                                $pages = DB::table('page')->count();
-                                echo $pages;
+                                $lesson = DB::table('lesson')->count();
+                                echo $lesson;
                                 ?>
                             </span>
                         </div>

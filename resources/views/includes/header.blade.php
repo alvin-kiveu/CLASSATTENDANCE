@@ -104,13 +104,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/addmenu" class="nav-link">
+                                    <a href="/addclass" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Class</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/listmenu" class="nav-link">
+                                    <a href="/listclass" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Classes</p>
                                     </a>
@@ -128,13 +128,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/addmenu" class="nav-link">
+                                    <a href="/addlesson" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Lessons</p>
+                                        <p>Add Lesson</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/listmenu" class="nav-link">
+                                    <a href="/listlesson" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Lession</p>
                                     </a>

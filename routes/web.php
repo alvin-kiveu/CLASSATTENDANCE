@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\PagesController;
 
 /*
@@ -28,9 +28,17 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/addmenu', function () {
-    return view('addmenu');
+Route::get('/addclass', function () {
+    return view('addclass');
 });
+
+// ADD A ROUTE WITH A PARAMETER
+
+// Route::get('/downloadqrcode/{lid}', function ($id) {
+//     return view('downloadqrcode', ['lid' => $id]);
+// });
+
+
 
 
 // API Routes
@@ -41,21 +49,23 @@ Route::get('/logout', [AuthController::class, 'logoutUser']);
 
 Route::get('/getsystermInfo', [AuthController::class, 'systermInfo']);
 
-Route::get('/listmenu', [MenuController::class, 'getMenu']);
+Route::post('/addclassprocessor', [ClassController::class, 'addClass']);
 
-Route::post('/addmenuprocessor', [MenuController::class, 'addMenu']);
+Route::get('/listclass', [ClassController::class, 'getClass']);
 
-Route::get('/addsubmenu', [MenuController::class, 'addSubMenu']);
+Route::get('/addlesson', [ClassController::class, 'addLesson']);
 
-Route::post('/addsubmenuprocessor', [MenuController::class, 'addSubMenuApp']);
+Route::post('/addlessonprocessor', [ClassController::class, 'addlessonApp']);
 
-Route::get('/listsubmenu', [MenuController::class, 'getSubMenu']);
+Route::get('/listlesson', [ClassController::class, 'getLesson']);
 
-Route::get('/addpage', [PagesController::class, 'appAddpage']);
+Route::get('/downloadqrcode/{lid}', [PagesController::class, 'getshowLesonQrcode']);
 
-Route::get('/listpages', [PagesController::class, 'getPages']);
+Route::get('/addstudent', [PagesController::class, 'AddStudent']);
 
-Route::post('/addpageprocessor', [PagesController::class, 'addPage']);
+Route::get('/liststudent', [PagesController::class, 'getStudent']);
+
+
 
 
 
