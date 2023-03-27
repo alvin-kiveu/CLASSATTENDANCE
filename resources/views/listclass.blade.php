@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>List Of Class</h1>
+          <h1>List Of Course</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -15,7 +15,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">View Class</h3>
+                            <h3 class="card-title">View Course</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -23,7 +23,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Class Name</th>
+                                        <th>Course Name</th>
                                         <th>Year of Study</th>
                                         <th>Action</th>
                                     </tr>

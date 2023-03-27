@@ -18,11 +18,11 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header bg-primary">
-                            <h3 class="card-title text-uppercase">ADD Course</h3>
+                            <h3 class="card-title text-uppercase">ADD STUDENTS</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/addclassprocessor" method="post">
+                        <form action="/addstudent" method="post">
                             {{-- Error Handling --}}
                             @if (session('error'))
                                 <div class="alert alert-danger">
@@ -38,27 +38,36 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Course Name</label>
-                                    <input type="text" name="classname" class="form-control"
-                                        placeholder="Enter Course Name" required>
+                                    <label for="exampleInputEmail1">Student's Name</label>
+                                    <input type="text" name="studentname" class="form-control"
+                                        placeholder="Enter Full Name" required>
                                 </div>
-
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Year of Student</label>
-                                    <select name="yearofstudy" class="form-control">
-                                        <option value="1">Year One</option>
-                                        <option value="2">Year Two</option>
-                                        <option value="3">Year Three</option>
-                                        <option value="4">Year Four</option>
-                                    </select>
-                                </div>
+                                    <label for="exampleInputEmail1">Course</label>
+                                    <select name="courseid" class="form-control" required>
+                                        <?php
+                                         //GET ALL COURSE
+                                         $course = DB::table('classes')->get();
+                                         //LOOP THROUGH COURSE
+                                            foreach ($course as $item) {
+                                                echo "<option value='$item->classid'>$item->classname</option>";
+                                            }
 
+                                        ?>
+                                    </select>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Password</label>
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Type password" required>
+                                    </div>
+                            
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">ADD CLASS</button>
+                                <button type="submit" class="btn btn-primary">ADD STUDENT</button>
                             </div>
                         </form>
                     </div>

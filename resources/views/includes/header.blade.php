@@ -94,11 +94,13 @@
                                 </p>
                             </a>
                         </li>
+
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cog"></i>
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Classes
+                                    Course
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -106,13 +108,13 @@
                                 <li class="nav-item">
                                     <a href="/addclass" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Class</p>
+                                        <p>Add Course</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/listclass" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>List Classes</p>
+                                        <p>List Course</p>
                                     </a>
                                 </li>
                             </ul>
@@ -142,7 +144,29 @@
                             </ul>
                         </li>
 
-
+                       <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Students
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/addstudents" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Student</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/liststudents" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Student</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         <li class="nav-item">
                             <a href="/logout" class="nav-link">

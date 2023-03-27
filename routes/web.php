@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,15 @@ Route::get('/addclass', function () {
     return view('addclass');
 });
 
+
+Route::get('/addstudents', function () {
+    return view('addstudent');
+});
+
+
+Route::get('/liststudents', function () {
+    return view('liststudents');
+});
 // ADD A ROUTE WITH A PARAMETER
 
 // Route::get('/downloadqrcode/{lid}', function ($id) {
@@ -61,7 +71,7 @@ Route::get('/listlesson', [ClassController::class, 'getLesson']);
 
 Route::get('/downloadqrcode/{lid}', [PagesController::class, 'getshowLesonQrcode']);
 
-Route::get('/addstudent', [PagesController::class, 'AddStudent']);
+Route::post('/addstudent', [StudentController::class, 'AddStudent']);
 
 Route::get('/liststudent', [PagesController::class, 'getStudent']);
 
