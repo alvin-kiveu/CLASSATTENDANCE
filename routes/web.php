@@ -43,11 +43,9 @@ Route::get('/liststudents', function () {
     return view('liststudents');
 });
 // ADD A ROUTE WITH A PARAMETER
-
-// Route::get('/downloadqrcode/{lid}', function ($id) {
-//     return view('downloadqrcode', ['lid' => $id]);
-// });
-
+Route::get('/viewattendance/{id}', function ($id) {
+    return view('attendance', ['id' => $id]);
+});
 
 
 
@@ -74,6 +72,13 @@ Route::get('/downloadqrcode/{lid}', [PagesController::class, 'getshowLesonQrcode
 Route::post('/addstudent', [StudentController::class, 'AddStudent']);
 
 Route::get('/liststudent', [PagesController::class, 'getStudent']);
+
+//HUNDEL DELETE REQUEST
+Route::get('/deleteclass/{id}', [ClassController::class, 'deleteClass']);
+Route:: get('/deletestudent/{id}', [StudentController::class, 'deleteStudent']);
+Route:: get('/deletelesson/{id}', [ClassController::class, 'deleteLesson']);
+
+
 
 
 

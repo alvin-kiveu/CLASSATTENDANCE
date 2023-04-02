@@ -69,5 +69,49 @@ class ClassController extends Controller
         return view('listlesson', compact('lesson'));
     }
 
+    //DELETE
+    public function deleteClass(Request $request)
+    {
+        $id = $request->route('id');
+        //GET LESSON
+        $class = DB::table('classes')->where('ID', $id)->first();
+        //GET LESSON ID
+        $classid = $class->classid;
+        //GET LESSON DETAILS
+        $lesson = DB::table('lesson')->where('classid', $classid)->first();
+        $lesssoncode = $lesson->lesssoncode;
+        //DELETE ATTENDANCE
+        $result = DB::table('student_sign')->where('lessonid', $lesssoncode)->delete();
+        //DELETE LESSON
+        $result = DB::table('lesson')->where('classid', $classid)->delete();
+        //DELETE CLASS
+        $result = DB::table('classes')->where('ID', $id)->delete();
+        if ($result == true) {
+            return redirect()->back()->with('success', 'Class deleted successfully');
+        } else {
+            return redirect()->back()->with('error', 'Class not deleted');
+        }
+    }
+
+    //DELETE LESSON
+
+    public function deleteLesson(Request $request)
+    {
+        $id = $request->route('id');
+        //GET LESSON
+        $lesson = DB::table('lesson')->where('ID', $id)->first();
+        //GET LESSON ID
+        $lesssoncode = $lesson->lesssoncode;
+        //DELETE ATTENDANCE
+        $result = DB::table('student_sign')->where('lessonid', $lesssoncode)->delete();
+        //DELETE LESSON
+        $result = DB::table('lesson')->where('ID', $id)->delete();
+        if ($result == true) {
+            return redirect()->back()->with('success', 'Lesson deleted successfully');
+        } else {
+            return redirect()->back()->with('error', 'Lesson not deleted');
+        }
+    }
+
 
 }

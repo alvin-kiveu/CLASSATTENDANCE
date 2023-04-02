@@ -55,3 +55,9 @@ CREATING A RESOURCE COLLECTION WITH LARAVEL
 ```bash
 php artisan make:resource PostCollection
 ```
+
+Run laravel on mobile
+        
+```bash
+php artisan serve --host 192.168.8.118 --port 80
+```

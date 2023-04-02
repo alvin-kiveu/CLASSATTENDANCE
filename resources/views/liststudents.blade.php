@@ -1,14 +1,14 @@
 @extends('layout')
 @section('content')
-<section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>List Of Lesson</h1>
-        </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>List Of Lesson</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -17,6 +17,17 @@
                         <div class="card-header">
                             <h3 class="card-title">View Lesson</h3>
                         </div>
+                        @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
@@ -45,10 +56,16 @@
                                         <td><?php echo $student->studentid; ?></td>
                                         <td><?php echo $student->studentname; ?></td>
                                         <td><?php echo $student->studentemail; ?></td>
-                                        <td><?php echo $course->classname; ?></td>
+                                        <td><?php
+                                        if ($course == null) {
+                                            echo 'No Course';
+                                        } else {
+                                                echo $course->classname;
+                                        }
+                                        
+                                        ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <a href="/deletestudent/<?php echo $student->ID; ?>" class="btn btn-danger text-light">Delete</a>
                                         </td>
                                     </tr>
                                     <?php } ?>

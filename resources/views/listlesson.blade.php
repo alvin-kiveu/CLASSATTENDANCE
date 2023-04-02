@@ -17,6 +17,17 @@
                         <div class="card-header">
                             <h3 class="card-title">View Lesson</h3>
                         </div>
+                        @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
@@ -27,7 +38,8 @@
                                         <th>Class Name</th>
                                         <th>Year of Study</th>
                                         <th>Lesson Code</th>
-                                        <th>Download Qrcode</th>
+                                        <th>Qrcode</th>
+                                        <th>Attendance</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -46,8 +58,10 @@
                                                 <a href="downloadqrcode/{{ $item->lesssoncode }}" class="btn btn-info">Download</a>
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="/viewattendance/{{ $item->lesssoncode }}" class="btn btn-success">View</a>
+                                            </td>
+                                            <td>
+                                                <a href="/deletelesson/{{ $item->ID }}" class="btn btn-danger text-light">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
